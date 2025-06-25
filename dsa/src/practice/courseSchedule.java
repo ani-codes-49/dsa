@@ -175,11 +175,14 @@ public class courseSchedule {
 	
 	static void dfs(List<List<Integer>> adj, int v, HashSet<Integer> vis) {
 		vis.add(v);
-		System.out.print(v + " "); ///preOrder
+//		System.out.print(v + " "); ///preOrder
 		for(int neighbor : adj.get(v)) {
 			if(!vis.contains(neighbor)) dfs(adj, neighbor, vis);
 		}
-//		System.out.print(v + " "); ///postOrder
+		System.out.print(v + " "); ///postOrder 
+									///as topological ordering is based on the postorder technique
+									///finishing all the dependents (chids/ requirements) before processing the current node
+									
 
 	}
 	
