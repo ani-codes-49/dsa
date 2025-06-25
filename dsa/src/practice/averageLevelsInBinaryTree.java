@@ -6,7 +6,7 @@ import java.util.List;
 import java.util.Queue;
 
 public class averageLevelsInBinaryTree {
-//test
+
 	static List<Double> averageOfLevels(TreeNode root) {
 		
 		List<Double> ans = new ArrayList<>();
