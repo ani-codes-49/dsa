@@ -39,6 +39,19 @@ public class evaluateDivision {
 			///if the connected node on which we are going at is not visited then only we will jump on that node
 			if (!vis.contains(n.destination)) {
 				///for calculating the expression we will go till the depth (DFS until we reach the destination)
+				///
+				///We will call the recursion first and calculate the answer later
+				///because we need to make sure we have found our destination otherwise if we calculate the answer before 
+				///calling the recursion (finding our destination) and if that path does not contain our destination then we have 
+				///to revert all things (calculations back) which is incorrect logic
+				///
+				///For this issue we call the recursion first then if we hit our base case (found our destination) then only
+				///we will return 1.0
+				///Now after recursion we will check whether we have received a non-negative value or not
+				///If we do, then we multiply returned value with the weight of the outgoing edge
+				///else we do nothing and explore other vertices
+				///
+				///
 				double product = helper(adj, n.destination, d, vis);
 				///Our recursion will return us non negative value if we have found our destination otherwise
 				///if it has explored a path and hasn't found our destination then it will return -1
